@@ -4,16 +4,8 @@
   "name": "User",
   "fields": [
     {
-      "name": "id",
-      "type": "long"
-    },
-    {
       "name": "name",
       "type": "string"
-    },
-    {
-      "name": "aadharId",
-      "type": "long"
     },
     {
       "name": "address",
