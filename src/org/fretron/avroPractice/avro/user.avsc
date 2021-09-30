@@ -12,6 +12,15 @@
       "type": "string"
     },
     {
+      "name": "aadharId",
+      "type": "long"
+    },
+    {
+      "name": "address",
+      "type": ["null","string"],
+      "default": null
+    },
+    {
       "name": "email",
       "type": ["null" ,"string" ],
       "default": null

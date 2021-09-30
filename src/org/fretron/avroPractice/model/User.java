@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class User extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -832285990431290286L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"org.fretron.avroPractice.model\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"email\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"age\",\"type\":[\"null\",\"int\"],\"default\":null}]}");
+  private static final long serialVersionUID = 5692796278092371926L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"org.fretron.avroPractice.model\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"address\",\"type\":[\"null\",\"string\"]},{\"name\":\"email\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"age\",\"type\":[\"null\",\"int\"],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -53,6 +53,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
 
   @Deprecated public long id;
   @Deprecated public java.lang.CharSequence name;
+  @Deprecated public java.lang.CharSequence address;
   @Deprecated public java.lang.CharSequence email;
   @Deprecated public java.lang.Integer age;
 
@@ -67,12 +68,14 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
    * All-args constructor.
    * @param id The new value for id
    * @param name The new value for name
+   * @param address The new value for address
    * @param email The new value for email
    * @param age The new value for age
    */
-  public User(java.lang.Long id, java.lang.CharSequence name, java.lang.CharSequence email, java.lang.Integer age) {
+  public User(java.lang.Long id, java.lang.CharSequence name, java.lang.CharSequence address, java.lang.CharSequence email, java.lang.Integer age) {
     this.id = id;
     this.name = name;
+    this.address = address;
     this.email = email;
     this.age = age;
   }
@@ -83,8 +86,9 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     switch (field$) {
     case 0: return id;
     case 1: return name;
-    case 2: return email;
-    case 3: return age;
+    case 2: return address;
+    case 3: return email;
+    case 4: return age;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -95,8 +99,9 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     switch (field$) {
     case 0: id = (java.lang.Long)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
-    case 2: email = (java.lang.CharSequence)value$; break;
-    case 3: age = (java.lang.Integer)value$; break;
+    case 2: address = (java.lang.CharSequence)value$; break;
+    case 3: email = (java.lang.CharSequence)value$; break;
+    case 4: age = (java.lang.Integer)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -131,6 +136,22 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
    */
   public void setName(java.lang.CharSequence value) {
     this.name = value;
+  }
+
+  /**
+   * Gets the value of the 'address' field.
+   * @return The value of the 'address' field.
+   */
+  public java.lang.CharSequence getAddress() {
+    return address;
+  }
+
+  /**
+   * Sets the value of the 'address' field.
+   * @param value the value to set.
+   */
+  public void setAddress(java.lang.CharSequence value) {
+    this.address = value;
   }
 
   /**
@@ -199,6 +220,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
 
     private long id;
     private java.lang.CharSequence name;
+    private java.lang.CharSequence address;
     private java.lang.CharSequence email;
     private java.lang.Integer age;
 
@@ -221,13 +243,17 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
         this.name = data().deepCopy(fields()[1].schema(), other.name);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.email)) {
-        this.email = data().deepCopy(fields()[2].schema(), other.email);
+      if (isValidValue(fields()[2], other.address)) {
+        this.address = data().deepCopy(fields()[2].schema(), other.address);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.age)) {
-        this.age = data().deepCopy(fields()[3].schema(), other.age);
+      if (isValidValue(fields()[3], other.email)) {
+        this.email = data().deepCopy(fields()[3].schema(), other.email);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.age)) {
+        this.age = data().deepCopy(fields()[4].schema(), other.age);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -245,13 +271,17 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
         this.name = data().deepCopy(fields()[1].schema(), other.name);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.email)) {
-        this.email = data().deepCopy(fields()[2].schema(), other.email);
+      if (isValidValue(fields()[2], other.address)) {
+        this.address = data().deepCopy(fields()[2].schema(), other.address);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.age)) {
-        this.age = data().deepCopy(fields()[3].schema(), other.age);
+      if (isValidValue(fields()[3], other.email)) {
+        this.email = data().deepCopy(fields()[3].schema(), other.email);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.age)) {
+        this.age = data().deepCopy(fields()[4].schema(), other.age);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -333,6 +363,45 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     }
 
     /**
+      * Gets the value of the 'address' field.
+      * @return The value.
+      */
+    public java.lang.CharSequence getAddress() {
+      return address;
+    }
+
+    /**
+      * Sets the value of the 'address' field.
+      * @param value The value of 'address'.
+      * @return This builder.
+      */
+    public org.fretron.avroPractice.model.User.Builder setAddress(java.lang.CharSequence value) {
+      validate(fields()[2], value);
+      this.address = value;
+      fieldSetFlags()[2] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'address' field has been set.
+      * @return True if the 'address' field has been set, false otherwise.
+      */
+    public boolean hasAddress() {
+      return fieldSetFlags()[2];
+    }
+
+
+    /**
+      * Clears the value of the 'address' field.
+      * @return This builder.
+      */
+    public org.fretron.avroPractice.model.User.Builder clearAddress() {
+      address = null;
+      fieldSetFlags()[2] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'email' field.
       * @return The value.
       */
@@ -346,9 +415,9 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       * @return This builder.
       */
     public org.fretron.avroPractice.model.User.Builder setEmail(java.lang.CharSequence value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.email = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this;
     }
 
@@ -357,7 +426,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       * @return True if the 'email' field has been set, false otherwise.
       */
     public boolean hasEmail() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
 
 
@@ -367,7 +436,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       */
     public org.fretron.avroPractice.model.User.Builder clearEmail() {
       email = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -385,9 +454,9 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       * @return This builder.
       */
     public org.fretron.avroPractice.model.User.Builder setAge(java.lang.Integer value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.age = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this;
     }
 
@@ -396,7 +465,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       * @return True if the 'age' field has been set, false otherwise.
       */
     public boolean hasAge() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
 
 
@@ -406,7 +475,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       */
     public org.fretron.avroPractice.model.User.Builder clearAge() {
       age = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -417,8 +486,9 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
         User record = new User();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.Long) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.email = fieldSetFlags()[2] ? this.email : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.age = fieldSetFlags()[3] ? this.age : (java.lang.Integer) defaultValue(fields()[3]);
+        record.address = fieldSetFlags()[2] ? this.address : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.email = fieldSetFlags()[3] ? this.email : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.age = fieldSetFlags()[4] ? this.age : (java.lang.Integer) defaultValue(fields()[4]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
